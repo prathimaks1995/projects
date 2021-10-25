@@ -1,0 +1,30 @@
+#Guess number
+#give input range - lower and upper range
+#machine will generate number randomly and we need to guess it in minimal guess counts and print guess count
+#need to guess in log2(upper-lower)
+
+import random
+import math
+
+def guess_number():
+    upper_bound=int(input("Enter the upper bound="))
+    lower_bound=int(input("ENter the lower bound="))
+    count=0
+
+    number=random.randint(lower_bound,upper_bound)
+    while count<math.log(upper_bound-lower_bound,2):
+        count+=1
+        guess=int(input("My guess is ="))
+        if guess==number:
+            print("Your right")
+            break
+        elif guess<number:
+            print("Guess is too small")
+        else:
+            print("Guess is too large")
+    if count<=math.log(upper_bound-lower_bound,2):
+        print("Your guess count is",count)
+    else:
+        print("Your worst at guessing number")
+
+guess_number()
