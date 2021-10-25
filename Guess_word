@@ -1,0 +1,20 @@
+#from list of words, guess the word which is generated randomly
+
+import random
+
+def guess_words(words_list):
+    word=random.choice(words_list)
+    count=0
+    while count<len(words_list):
+        count+=1
+        guess=str(input("Enter your guess word"))
+        if guess in words_list:
+            print("Your little Lucky")
+            if guess==word:
+                print("Your luckiest")
+                break
+        else:
+            print("Not present in wordlist")
+
+words_list=["prathima","disha","sharu","sharan"]
+guess_words(words_list)
